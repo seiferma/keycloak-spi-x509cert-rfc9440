@@ -1,0 +1,16 @@
+name: Development Build
+
+on:
+  push:
+    tags-ignore:
+      - '**'
+    branches:
+      - '**'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    uses: ./.github/workflows/gradle.yml
